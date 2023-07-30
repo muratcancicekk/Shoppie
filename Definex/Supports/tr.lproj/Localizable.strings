@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Definex
+
+  Created by Murat Çiçek on 30.07.2023.
+  
+*/
+
+// MARK: Login VC
+"PROJECT_TITLE" = "Definex \n Çalışma Örneği";
+"EMAIL_ADDRESS" = "E-mail Adresiniz";
+"PASSWORD" = "Şifre";
+"LOGIN" = "Giriş Yap";
+"FACEBOOK" = "FACEBOOK";
+"TWITTER" = "TWITTER";
+"FORGOT_PASS" = "ŞİFREMİ UNUTTUM";
+"COMING_SOON" = "Çok Yakında";
+"GLOBAL_OK" = "Tamam";
+"GLOBAL_CANCEL" = "Vazgeç";
+"ERROR" = "Hata";

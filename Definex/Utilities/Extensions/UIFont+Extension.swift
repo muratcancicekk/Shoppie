@@ -9,7 +9,7 @@ import UIKit
 
 extension UIFont {
 
-    public enum FontType: String {
+    public enum FontTypeRoboto: String {
         case black = "-Black"
         case blackItalic = "-BlackItalic"
         case bold = "-Bold"
@@ -23,9 +23,17 @@ extension UIFont {
         case thin = "-Thin"
         case thinItalic = "-ThinItalic"
     }
+    
+    public enum FontTypeInter: String {
+        case black = "-Black"
+    }
 
-    static func primaryFont(_ type: FontType = .medium, size: CGFloat = UIFont.systemFontSize) -> UIFont {
+    static func robotoFont(_ type: FontTypeRoboto = .medium, size: CGFloat = UIFont.systemFontSize) -> UIFont {
         return UIFont(name: "Roboto\(type.rawValue)", size: size)!
+    }
+    
+    static func interFont(_ type: FontTypeInter = .black, size: CGFloat = UIFont.systemFontSize) -> UIFont {
+        return UIFont(name: "Inter\(type.rawValue)", size: size)!
     }
 
 }

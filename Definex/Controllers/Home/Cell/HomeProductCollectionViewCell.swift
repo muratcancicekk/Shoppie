@@ -27,24 +27,24 @@ class HomeProductCollectionViewCell: UICollectionViewCell {
     // TODO: Burada mopdelden star bilgisi veya diğer ofter gelmez ise gizlensin
     
     func cell1() {
-        productNameLabel.configureLabel(text: "", font: Fonts.shared.regular16, textColor: .black)
-        priceLabel.configureLabel(text: "", font: Fonts.shared.medium14, textColor: .black)
-        oldPriceLabel.configureLabel(text: "", font: Fonts.shared.regular12, textColor: .blue)
-        discountLabel.configureLabel(text: "", font: Fonts.shared.regular12, textColor: .pinkColor)
+        productNameLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular16, textColor: .black)
+        priceLabel.configureLabel(text: "", font: Fonts.shared.robotoMedium14, textColor: .black)
+        oldPriceLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular12, textColor: .blue)
+        discountLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular12, textColor: .pinkColor)
         starView.hide()
     }
     
     func cell2() {
-        productNameLabel.configureLabel(text: "", font: Fonts.shared.regular12, textColor: .black)
-        priceLabel.configureLabel(text: "", font: Fonts.shared.medium14, textColor: .black)
-        oldPriceLabel.configureLabel(text: "", font: Fonts.shared.regular12, textColor: .blue)
+        productNameLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular12, textColor: .black)
+        priceLabel.configureLabel(text: "", font: Fonts.shared.robotoMedium14, textColor: .black)
+        oldPriceLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular12, textColor: .blue)
         starView.hide()
         discountLabel.hide()
     }
     
     func cell3() {
-        productNameLabel.configureLabel(text: "", font: Fonts.shared.regular14, textColor: .black)
-        priceLabel.configureLabel(text: "", font: Fonts.shared.medium20, textColor: .black)
+        productNameLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular14, textColor: .black)
+        priceLabel.configureLabel(text: "", font: Fonts.shared.robotoMedium20, textColor: .black)
         discountStackView.hide()
     }
 }

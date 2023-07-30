@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTextFieldView" customModule="Definex" customModuleProvider="target">
             <connections>
                 <outlet property="dvider" destination="qVD-52-Mh6" id="le0-Qj-llf"/>
+                <outlet property="dviderHeightConstraint" destination="xk3-uj-Qqt" id="z5l-Jd-83O"/>
                 <outlet property="headerLabel" destination="ncq-b4-LfE" id="DR1-ZS-Bw9"/>
                 <outlet property="textField" destination="pIy-FF-Prn" id="85m-F3-ZqT"/>
                 <outlet property="trailingImageView" destination="KkT-bj-Xh7" id="ktm-c8-lXD"/>
@@ -22,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVD-52-Mh6">
-                    <rect key="frame" x="0.0" y="79" width="393" height="2"/>
+                    <rect key="frame" x="0.0" y="80" width="393" height="1"/>
                     <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="2" id="xk3-uj-Qqt"/>
+                        <constraint firstAttribute="height" constant="1" id="xk3-uj-Qqt"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KkT-bj-Xh7">
