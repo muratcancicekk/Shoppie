@@ -49,9 +49,11 @@ final class HomeProductCollectionViewCell: UICollectionViewCell {
     }
 }
 extension HomeProductCollectionViewCell {
+    
   private  func configureCell() {
       self.addShadow(color: .blue, opacity: 0.4, offset: CGSize(width: 0, height: 4), radius: 8.0)
       self.makeCornerRadius(radius: 3)
       productImageView.makeCornerRadius(radius: 3)
     }
+    
 }
