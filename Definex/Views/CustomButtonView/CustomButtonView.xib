@@ -4,12 +4,12 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomButtonView" customModule="Definex" customModuleProvider="target">
             <connections>
+                <outlet property="buttonAction" destination="9Px-jA-Clu" id="pKg-AV-klU"/>
                 <outlet property="leadingIconImageView" destination="gXl-kc-xjN" id="AkJ-7K-NCf"/>
                 <outlet property="titleLabel" destination="FlP-1D-RkY" id="sTw-rn-FL1"/>
             </connections>
@@ -19,26 +19,27 @@
             <rect key="frame" x="0.0" y="0.0" width="219" height="72"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="jXa-L6-hRl">
-                    <rect key="frame" x="38.333333333333329" y="16" width="142.66666666666669" height="40"/>
+                <stackView opaque="NO" contentMode="center" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jXa-L6-hRl">
+                    <rect key="frame" x="5" y="8" width="209" height="56"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gXl-kc-xjN">
-                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="40" id="GFT-wB-tJ0"/>
-                                <constraint firstAttribute="height" constant="40" id="Qiw-3d-7I1"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="0.0" width="62.666666666666664" height="56"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlP-1D-RkY">
-                            <rect key="frame" x="90" y="0.0" width="52.666666666666657" height="40"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlP-1D-RkY">
+                            <rect key="frame" x="64.666666666666671" y="0.0" width="144.33333333333331" height="56"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gXl-kc-xjN" firstAttribute="width" secondItem="jXa-L6-hRl" secondAttribute="width" multiplier="0.3" id="pOj-af-x9D"/>
+                    </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Px-jA-Clu">
                     <rect key="frame" x="0.0" y="0.0" width="219" height="72"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain"/>
                     <connections>
@@ -47,14 +48,17 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="jXa-L6-hRl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5jD-Xm-Nqs"/>
                 <constraint firstItem="9Px-jA-Clu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I8y-ev-FNZ"/>
+                <constraint firstAttribute="trailing" secondItem="jXa-L6-hRl" secondAttribute="trailing" constant="5" id="IaJ-aD-Tr6"/>
                 <constraint firstItem="9Px-jA-Clu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OuH-sk-htX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9Px-jA-Clu" secondAttribute="bottom" id="T8t-Ru-v1C"/>
-                <constraint firstItem="jXa-L6-hRl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eFY-s2-zvA"/>
+                <constraint firstItem="jXa-L6-hRl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="efl-Ed-1kF"/>
                 <constraint firstAttribute="trailing" secondItem="9Px-jA-Clu" secondAttribute="trailing" id="ja1-S5-eWp"/>
+                <constraint firstItem="jXa-L6-hRl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="lwG-uU-ZOs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jXa-L6-hRl" secondAttribute="bottom" constant="8" id="nJl-1f-RE9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-12.977099236641221" y="-254.92957746478874"/>
@@ -62,8 +66,5 @@
     </objects>
     <resources>
         <image name="twitterIcon" width="40" height="40"/>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

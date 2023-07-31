@@ -20,18 +20,21 @@ class NetworkManager {
         }
         
         let task = URLSessionCache.session().dataTask(with: request) { (data, response, error) in
-            if let _ = error {
+            if let error = error {
                 completion(.failure(.requestFailed))
+                AlertManager.showAlert(title: "ERROR".localized(), message: error.localizedDescription, preferredStyle: .alert)
                 return
             }
             
             if let httpResponse = response as? HTTPURLResponse {
                    if httpResponse.statusCode == 401 {
+                       AlertManager.showAlert(title: "ERROR".localized(), message: error?.localizedDescription, preferredStyle: .alert)
                        completion(.failure(.tokenError))
                        }
                    }
 
             guard let data = data else {
+                AlertManager.showAlert(title: "ERROR".localized(), message: error?.localizedDescription, preferredStyle: .alert)
                 completion(.failure(.invalidData))
                 return
             }
@@ -41,6 +44,7 @@ class NetworkManager {
                 let result = try decoder.decode(C.self, from: data)
                 completion(.success(result))
             } catch {
+                AlertManager.showAlert(title: "ERROR".localized(), message: error.localizedDescription, preferredStyle: .alert)
                 completion(.failure(.invalidData))
             }
         }

@@ -11,13 +11,16 @@ final class Fonts {
     
     static let shared = Fonts()
     
-    let headLine24 = UIFont.primaryFont(.regular, size: 24)
-    let title20 = UIFont.primaryFont(.medium, size: 20)
-    let subHeading16 = UIFont.primaryFont(.regular, size: 16)
-    let medium14 = UIFont.primaryFont(.medium, size: 14)
-    let medium20 = UIFont.primaryFont(.medium, size: 20)
-    let regular14 = UIFont.primaryFont(.regular, size: 14)
-    let regular16 = UIFont.primaryFont(.regular, size: 16)
-    let regular12 = UIFont.primaryFont(.regular, size: 12)
-    let miniCaps10 = UIFont.primaryFont(.medium, size: 10)
+    let robotoHeadLine24 = UIFont.robotoFont(.regular, size: 24)
+    let robotoTitle20 = UIFont.robotoFont(.medium, size: 20)
+    let robotoSubHeading16 = UIFont.robotoFont(.regular, size: 16)
+    let robotoMedium10 = UIFont.robotoFont(.medium, size: 10)
+    let robotoMedium14 = UIFont.robotoFont(.medium, size: 14)
+    let robotoMedium20 = UIFont.robotoFont(.medium, size: 20)
+    let robotoRegular14 = UIFont.robotoFont(.regular, size: 14)
+    let robotoRegular16 = UIFont.robotoFont(.regular, size: 16)
+    let robotoRegular12 = UIFont.robotoFont(.regular, size: 12)
+    let robotoMiniCaps10 = UIFont.robotoFont(.medium, size: 10)
+    
+    let interBlack32 = UIFont.interFont(.black, size: 32)
 }
