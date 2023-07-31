@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class LoginViewController: BaseViewController {
+final class LoginViewController: BaseViewController {
     /// Header
     @IBOutlet private weak var headerTitleLabel: UILabel!
     @IBOutlet private weak var emailTextField: CustomTextFieldView!
@@ -31,22 +31,24 @@ class LoginViewController: BaseViewController {
         passwordTextField.$fieldValue.assign(to: &viewModel.$password)
         viewModel.$isReady.sink { [weak self] isReady in
             guard let self = self else { return }
-            self.loginButton.customButtonSetup(leadingIconHide: true, title: "LOGIN".localized(), titleColor: .black, bgColor: isReady ? .green : .gray.withAlphaComponent(0.5), isEnable: isReady ? true : false)
+            self.loginButton.customButtonSetup(leadingIconHide: true, title: "LOGIN".localized(), titleColor: .black, bgColor: isReady ? Colors.customGreen ?? .green : .gray.withAlphaComponent(0.5), isEnable: isReady ? true : false)
         }.store(in: &cancellables)
     }
+    
 }
 extension LoginViewController: LoginViewInterface {
+    
     func activityStart() {
-        self.view.activityStartAnimating(activityColor: .red, backgroundColor: .clear)
+        view.activityStartAnimating(activityColor: Colors.customBlue ?? .blue, backgroundColor: Colors.customBlue?.withAlphaComponent(0.2) ?? .blue)
     }
     
     func activityStop() {
-        self.view.activityStopAnimating()
+        view.activityStopAnimating()
     }
     
     func configureUI() {
         /// TextFields Configure
-        headerTitleLabel.configureLabel(text: "PROJECT_TITLE".localized(), font: Fonts.shared.interBlack32, textColor: .blue)
+        headerTitleLabel.configureLabel(text: "PROJECT_TITLE".localized(), font: Fonts.shared.interBlack32, textColor: Colors.customBlue ?? .blue)
         emailTextField.setupTextField(placeHolder: "EMAIL_ADDRESS".localized(), trailingImage: AssetsName.mailFill.rawValue, isEmailTextField: true)
         passwordTextField.setupTextField(placeHolder: "PASSWORD".localized(), trailingImage: AssetsName.lockFill.rawValue, isSecureText: true)
         /// ButtonsConfigure
@@ -58,15 +60,16 @@ extension LoginViewController: LoginViewInterface {
         forgotPasswordButton.makeCornerRadius(radius: 6)
         facebookButton.delegate = self
         facebookButton.makeCornerRadius(radius: 6)
-        facebookButton.customButtonSetup(imageName: AssetsName.facebookIcon.rawValue, title: "FACEBOOK".localized(), titleColor: .white, bgColor: .blue)
+        facebookButton.customButtonSetup(imageName: AssetsName.facebookIcon.rawValue, title: "FACEBOOK".localized(), titleColor: .white, bgColor: Colors.facebookBlue ?? .blue)
         twitterButton.delegate = self
         twitterButton.makeCornerRadius(radius: 6)
-        twitterButton.customButtonSetup(imageName: AssetsName.twitterIcon.rawValue, title: "TWITTER".localized(), titleColor: .white, bgColor: .blue)
+        twitterButton.customButtonSetup(imageName: AssetsName.twitterIcon.rawValue, title: "TWITTER".localized(), titleColor: .white, bgColor: UIColor(named: "twitterBlue") ?? .blue)
         twitterButton.buttonAction.tag = 3
         facebookButton.buttonAction.tag = 2
         forgotPasswordButton.buttonAction.tag = 1
         loginButton.buttonAction.tag = 0
     }
+    
 }
 
 extension LoginViewController: CustomButtonDidTapped {

@@ -44,7 +44,7 @@ final class CustomButtonView: BaseView {
         leadingIconImageView.hide()
         backgroundColor = bgColor
             layer.borderWidth = 1
-            layer.borderColor = UIColor.blue.cgColor
+        layer.borderColor = Colors.customBlue?.cgColor ?? UIColor.blue.cgColor
         buttonAction.tag = tag
     }
     

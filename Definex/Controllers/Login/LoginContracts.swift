@@ -17,7 +17,7 @@ protocol LoginViewModelInterface: AnyObject {
     func viewDidLoad()
 }
 
-protocol LoginViewInterface: AnyObject {
+protocol LoginViewInterface: AnyObject, SeguePerformable {
     func configureUI()
     func activityStart()
     func activityStop()

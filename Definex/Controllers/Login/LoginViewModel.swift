@@ -34,7 +34,8 @@ extension LoginViewModel: LoginViewModelInterface {
                 DispatchQueue.main.async {
                     self.view?.activityStop()
                 }
-            case .failure(let failure):
+            case .failure(let error):
+                LoggerManager.log(.error, error.localizedDescription)
                 DispatchQueue.main.async {
                     self.view?.activityStop()
                 }

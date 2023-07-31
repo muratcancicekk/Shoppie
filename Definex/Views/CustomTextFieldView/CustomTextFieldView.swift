@@ -62,7 +62,7 @@ extension CustomTextFieldView {
     }
     private func editingBeginConfigure() {
         headerLabel.show()
-        dvider.backgroundColor = .blue
+        dvider.backgroundColor = Colors.customBlue ?? .blue
         dviderHeightConstraint.constant = 2
         trailingImageView.tintColor = .gray
     }
