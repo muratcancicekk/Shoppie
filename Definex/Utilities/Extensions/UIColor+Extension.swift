@@ -4,6 +4,7 @@
 //
 //  Created by Murat Çiçek on 27.07.2023.
 //
+// swiftlint:disable identifier_name
 
 import UIKit
 
