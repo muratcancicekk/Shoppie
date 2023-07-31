@@ -4,12 +4,13 @@
 //
 //  Created by Murat Çiçek on 27.07.2023.
 //
+// swiftlint:disable identifier_name
 
 import UIKit
 import SwiftUI
 
 extension UIView {
-    //Load view nib file
+    // Load view nib file
     func ownFirstNib() {
         guard let view = loadNib() else { return }
         view.frame = bounds
@@ -27,7 +28,7 @@ extension UIView {
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
-    //Hide or show view
+    // Hide or show view
     func hide(){
         self.isHidden = true
     }
@@ -36,7 +37,7 @@ extension UIView {
         self.isHidden = false
     }
     
-    //Corner radius
+    // Corner radius
     func makeCornerRadius(radius: Double) {
         self.layer.cornerRadius = radius
     }
@@ -47,7 +48,6 @@ extension UIView {
         backgroundView.frame = CGRect.init(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
         backgroundView.backgroundColor = backgroundColor
         backgroundView.tag = 475647
-        
         var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
         activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
         activityIndicator.center = self.center
@@ -56,9 +56,7 @@ extension UIView {
         activityIndicator.color = activityColor
         activityIndicator.startAnimating()
         self.isUserInteractionEnabled = false
-        
         backgroundView.addSubview(activityIndicator)
-        
         self.addSubview(backgroundView)
     }
     
@@ -71,33 +69,32 @@ extension UIView {
     
     // View Background Add Shadow
     func addShadow(color: UIColor = .black,
-                      opacity: Float = 0.5,
-                      offset: CGSize = CGSize(width: 0, height: 2),
-                      radius: CGFloat = 4.0) {
-           layer.shadowColor = color.cgColor
-           layer.shadowOpacity = opacity
-           layer.shadowOffset = offset
-           layer.shadowRadius = radius
-           layer.masksToBounds = false
-       }
+                   opacity: Float = 0.5,
+                   offset: CGSize = CGSize(width: 0, height: 2),
+                   radius: CGFloat = 4.0) {
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offset
+        layer.shadowRadius = radius
+        layer.masksToBounds = false
+    }
     
-
-      @available(iOS 13, *)
-      private struct Preview: UIViewRepresentable {
-          typealias UIViewType = UIView
-          let view: UIView
-          func makeUIView(context: Context) -> UIView {
-              return view
-          }
-          
-          func updateUIView(_ uiView: UIView, context: Context) {
-              //
-          }
-      }
-      
-      @available(iOS 13, *)
-      func showPreview() -> some View {
-          // inject self (the current UIView) for the preview
-          Preview(view: self)
-      }
+    @available(iOS 13, *)
+    private struct Preview: UIViewRepresentable {
+        typealias UIViewType = UIView
+        let view: UIView
+        func makeUIView(context: Context) -> UIView {
+            return view
+        }
+        
+        func updateUIView(_ uiView: UIView, context: Context) {
+            //
+        }
+    }
+    
+    @available(iOS 13, *)
+    func showPreview() -> some View {
+        // inject self (the current UIView) for the preview
+        Preview(view: self)
+    }
 }

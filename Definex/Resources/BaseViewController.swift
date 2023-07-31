@@ -15,7 +15,5 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         self.bind()
     }
-    
     func bind() {}
-    
 }

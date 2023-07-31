@@ -4,11 +4,11 @@
 //
 //  Created by Murat Çiçek on 28.07.2023.
 //
+// swiftlint:disable identifier_name
 
 import UIKit
 
 final class CustomStarView: BaseView {
-    
     @IBOutlet weak var starStackView: UIStackView!
     @IBOutlet weak var star1: UIImageView!
     @IBOutlet weak var star2: UIImageView!
@@ -18,7 +18,6 @@ final class CustomStarView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
     }
     
     func setupStarsUI(point: Int){
@@ -35,4 +34,3 @@ final class CustomStarView: BaseView {
     }
     
 }
-

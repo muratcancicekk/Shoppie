@@ -12,7 +12,6 @@ class BaseView: UIView {
         super.init(frame: frame)
         ownFirstNib()
     }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         ownFirstNib()
