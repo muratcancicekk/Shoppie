@@ -34,7 +34,7 @@ final class CustomButtonView: BaseView {
     }
     func customButtonSetupForgot(title: String,
                                  titleColor: UIColor,
-                                 bgColor: UIColor, buttonTag: Int) {
+                                 bgColor: UIColor) {
         titleLabel.text = title
         titleLabel.textColor = titleColor
         titleLabel.font = Fonts.shared.robotoMedium10
@@ -42,7 +42,6 @@ final class CustomButtonView: BaseView {
         backgroundColor = bgColor
             layer.borderWidth = 1
         layer.borderColor = Colors.customBlue?.cgColor ?? UIColor.blue.cgColor
-        buttonAction.tag = tag
     }
     @IBAction func buttonTapped(_ sender: Any) {
         delegate?.didButtonTapped((sender as? UIButton)?.tag)

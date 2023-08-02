@@ -8,39 +8,35 @@
 import UIKit
 
 final class CustomTextFieldView: BaseView {
-    
     @IBOutlet private weak var headerLabel: UILabel!
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var trailingImageView: UIImageView!
     @IBOutlet private weak var dvider: UIView!
     @IBOutlet weak var dviderHeightConstraint: NSLayoutConstraint!
-    
     var isEmailTextField = false
-    
     @Published var fieldValue = "" {
         didSet {
             let isValid = Helpers.shared.isValidEmail(email: fieldValue)
-            
-            if !fieldValue.isEmpty && !isEmailTextField{
+            if !fieldValue.isEmpty && !isEmailTextField {
                 textField.text = fieldValue
                 editingBeginConfigure()
             } else if isEmailTextField && !isValid {
                 wrongText()
             } else if isValid {
                 editingBeginConfigure()
-            }
-            else {
+            } else {
                 editingEndConfigure()
             }
         }
     }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         configureCustomTextView()
     }
-    
-    func setupTextField(placeHolder: String,trailingImage: String, isEmailTextField: Bool = false, isSecureText: Bool = false) {
+    func setupTextField(placeHolder: String,
+                        trailingImage: String,
+                        isEmailTextField: Bool = false,
+                        isSecureText: Bool = false) {
         textField.placeholder = placeHolder
         headerLabel.text = placeHolder
         trailingImageView.image = UIImage(systemName: trailingImage)
@@ -58,7 +54,6 @@ extension CustomTextFieldView {
         textField.font = Fonts.shared.robotoRegular16
         headerLabel.font = Fonts.shared.robotoRegular12
         trailingImageView.tintColor = .gray.withAlphaComponent(0.5)
-        
     }
     private func editingBeginConfigure() {
         headerLabel.show()
@@ -72,27 +67,21 @@ extension CustomTextFieldView {
         trailingImageView.tintColor = .gray.withAlphaComponent(0.5)
         headerLabel.hide()
     }
-    
     private func wrongText() {
         headerLabel.show()
         dvider.backgroundColor = .red
         trailingImageView.tintColor = .red
     }
-    
 }
 
 // MARK: TextFieldDelegate
 extension CustomTextFieldView: UITextFieldDelegate {
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text?.isEmpty ?? true {
             editingEndConfigure()
         }
     }
-    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         fieldValue = textField.text ?? ""
     }
-    
 }
-

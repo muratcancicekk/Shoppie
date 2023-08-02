@@ -21,4 +21,5 @@ protocol LoginViewInterface: AnyObject, SeguePerformable {
     func configureUI()
     func activityStart()
     func activityStop()
+    func openHome()
 }

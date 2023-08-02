@@ -18,3 +18,11 @@
 "GLOBAL_OK" = "Tamam";
 "GLOBAL_CANCEL" = "Vazgeç";
 "ERROR" = "Hata";
+
+// MARK: Tabbar VC
+"TAB_DISCOVER" = "Keşfet";
+"TAB_EMPTY" = "Boş";
+
+// MARK: DiscoverVC
+"HOME" = "Ana Sayfa";
+"PULL_REFRESH" = "Yenileniyor";

@@ -18,3 +18,11 @@
 "GLOBAL_OK" = "Ok";
 "GLOBAL_CANCEL" = "Cancel";
 "ERROR" = "Error";
+
+// MARK: Tabbar VC
+"TAB_DISCOVER" = "Discover";
+"TAB_EMPTY" = "Empty";
+
+// MARK: DiscoverVC
+"HOME" = "Home";
+"PULL_REFRESH" = "Pull to refresh";

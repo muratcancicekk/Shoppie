@@ -32,7 +32,6 @@ extension UIColor {
     static func gradientColors(colors: [UIColor]) -> [CGColor] {
          return colors.map { $0.cgColor }
      }
-    
 }
 
 

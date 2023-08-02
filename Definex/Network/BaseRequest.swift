@@ -7,7 +7,7 @@
 import Foundation
 
 final class BaseRequest {
-    static func requestGenerate<T:Codable>(requestType: RequestType, model: T ) -> URLRequest? {
+    static func requestGenerate<T:Codable>(requestType: RequestType, model: T? = nil ) -> URLRequest? {
         guard let url = requestType.endPoint else {
             return nil
         }
