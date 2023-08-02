@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class HomeProductCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet private weak var cellBgView: UIView!
     @IBOutlet private weak var productImageView: UIImageView!
     @IBOutlet private weak var productNameLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
@@ -18,42 +19,50 @@ final class HomeProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var discountStackView: UIStackView!
     /// Rate
     @IBOutlet private weak var starView: CustomStarView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCell()
     }
-    
-    // TODO: Burada mopdelden star bilgisi veya diğer ofter gelmez ise gizlensin
-    
-    func cell1() {
-        productNameLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular16, textColor: .black)
-        priceLabel.configureLabel(text: "", font: Fonts.shared.robotoMedium14, textColor: .black)
-        oldPriceLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular12, textColor: .blue)
-        discountLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular12, textColor: .pinkColor)
-        starView.hide()
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        productImageView.image = nil
+        productNameLabel.text = nil
+        priceLabel.text = nil
+        oldPriceLabel.text = nil
+        discountLabel.text = nil
+        starView.show()
+        discountStackView.show()
+        starView.setupStarsUI(point: 0)
     }
-    
-    func cell2() {
-        productNameLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular12, textColor: .black)
-        priceLabel.configureLabel(text: "", font: Fonts.shared.robotoMedium14, textColor: .black)
-        oldPriceLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular12, textColor: .blue)
-        starView.hide()
-        discountLabel.hide()
-    }
-    
-    func cell3() {
-        productNameLabel.configureLabel(text: "", font: Fonts.shared.robotoRegular14, textColor: .black)
-        priceLabel.configureLabel(text: "", font: Fonts.shared.robotoMedium20, textColor: .black)
-        discountStackView.hide()
+    func setupCell(data: DiscoverModel.DiscoverListData?) {
+        guard let data = data else { return }
+        productImageView.sd_setImage(with: URL(string: data.imageURL ?? ""))
+        productNameLabel.configureLabel(text: data.description,
+                                        font: Fonts.shared.robotoRegular16,
+                                        textColor: .black)
+        priceLabel.configureLabel(text: "\(data.price?.value ?? 0) \(data.price?.currency ?? "")",
+                                  font: Fonts.shared.robotoMedium14,
+                                  textColor: .black)
+        oldPriceLabel.configureLabel(text: "\(data.oldPrice?.value ?? 0) \(data.oldPrice?.currency ?? "")",
+                                     font: Fonts.shared.robotoRegular12,
+                                     textColor: .black)
+        oldPriceLabel.strikeThrough()
+        discountLabel.configureLabel(text: data.discount,
+                                     font: Fonts.shared.robotoRegular12,
+                                     textColor: .pinkColor)
+        starView.setupStarsUI(point: data.ratePercentage ?? 0)
+        if data.oldPrice == nil {
+            discountStackView.hide()
+            priceLabel.font = Fonts.shared.robotoMedium20
+        } else if data.ratePercentage == nil {
+            starView.hide()
+        }
     }
 }
 extension HomeProductCollectionViewCell {
-    
-  private  func configureCell() {
-      self.addShadow(color: .blue, opacity: 0.4, offset: CGSize(width: 0, height: 4), radius: 8.0)
-      self.makeCornerRadius(radius: 3)
-      productImageView.makeCornerRadius(radius: 3)
+    private  func configureCell() {
+        cellBgView.addShadow(color: .black, opacity: 0.08, offset: CGSize(width: 3, height: 4), radius: 8.0)
+        cellBgView.makeCornerRadius(radius: 6)
+        productImageView.makeCornerRadius(radius: 6)
     }
-    
 }

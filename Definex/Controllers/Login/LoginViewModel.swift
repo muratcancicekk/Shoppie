@@ -31,9 +31,13 @@ extension LoginViewModel: LoginViewModelInterface {
             switch response {
             case .success(let success):
                 UserDefaultsOrganizer.token.save(data: success.token)
-                DispatchQueue.main.async {
-                    self.view?.activityStop()
+                if let token = success.token {
+                    DispatchQueue.main.async {
+                        self.view?.openHome()
+                        self.view?.activityStop()
+                    }
                 }
+             
             case .failure(let error):
                 LoggerManager.log(.error, error.localizedDescription)
                 DispatchQueue.main.async {
@@ -56,5 +60,4 @@ extension LoginViewModel: LoginViewModelInterface {
         start()
         view?.configureUI()
     }
-    
 }

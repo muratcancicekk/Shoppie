@@ -22,6 +22,7 @@ target 'Definex' do
   pod 'FirebaseRemoteConfig', '~> 9.6.0'
   pod 'FirebaseCrashlytics', '~> 9.6.0'
   pod 'FirebaseAnalytics', '~> 9.6.0'
+  pod 'SDWebImage', '~> 5.0'
 
   target 'DefinexTests' do
     inherit! :search_paths
