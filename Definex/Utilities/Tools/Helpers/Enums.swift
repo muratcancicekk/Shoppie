@@ -20,3 +20,6 @@ public enum Colors {
     static let customGreen = UIColor(named: "customGreen")
     static let customBlue = UIColor(named: "customBlue")
 }
+enum DeepLink: String {
+    case home
+}

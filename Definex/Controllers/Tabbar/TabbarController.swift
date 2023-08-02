@@ -82,3 +82,11 @@ extension TabbarController {
         return navController
     }
 }
+extension TabbarController {
+    func handleDeepLink(_ deepLink: DeepLink) {
+        switch deepLink {
+        case .home:
+            selectedIndex = 0
+        }
+    }
+}
