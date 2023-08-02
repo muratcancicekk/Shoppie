@@ -487,6 +487,13 @@
 			path = CustomButtonView;
 			sourceTree = "<group>";
 		};
+		A88FD5E32A7A9BC500242810 /* DeepLink */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeepLink;
+			sourceTree = "<group>";
+		};
 		A8943E7D2A767C8800D9C29E /* Inter */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +513,7 @@
 		A8943E922A76990000D9C29E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A88FD5E32A7A9BC500242810 /* DeepLink */,
 				A89C657C2A77A3EB00E76C5B /* LoggerManager */,
 				A8943E932A76990B00D9C29E /* AlertManager */,
 				A8555D0E2A72EAB50084BFB1 /* CacheManager */,
