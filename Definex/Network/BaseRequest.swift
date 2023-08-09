@@ -20,7 +20,8 @@ final class BaseRequest {
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             }
         }
-        if let token = UserDefaultsOrganizer.token.read() {
+        if let token = KeychainManager.getData(forAccount: UserDefaultsOrganizer.email.read() ?? "",
+                                               service: KeyChainServices.definexCase.rawValue) {
             request.setValue(token, forHTTPHeaderField: "token")
         }
         return request

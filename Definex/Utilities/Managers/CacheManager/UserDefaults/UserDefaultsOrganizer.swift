@@ -8,5 +8,5 @@
 import Foundation
 
 enum UserDefaultsOrganizer {
-    static let token = UserDefaultsUnityManager<String>(key: .TOKEN)
+    static let email = UserDefaultsUnityManager<String>(key: .EMAIL)
 }

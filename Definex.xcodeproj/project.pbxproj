@@ -14,6 +14,7 @@
 		A81ACF072A741DBB0032350C /* HomeProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81ACF052A741DBB0032350C /* HomeProductCollectionViewCell.swift */; };
 		A81ACF082A741DBB0032350C /* HomeProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A81ACF062A741DBB0032350C /* HomeProductCollectionViewCell.xib */; };
 		A82BE71D2A74317800CBD0F9 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82BE71C2A74317700CBD0F9 /* UILabel+Extension.swift */; };
+		A8481E5E2A83B9DF00735FA0 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8481E5D2A83B9DF00735FA0 /* KeyChainManager.swift */; };
 		A8555D092A72E5810084BFB1 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8555D082A72E5810084BFB1 /* Network.swift */; };
 		A8555D0B2A72E5A30084BFB1 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8555D0A2A72E5A30084BFB1 /* RequestType.swift */; };
 		A8555D0D2A72EA360084BFB1 /* URLSessionCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8555D0C2A72EA360084BFB1 /* URLSessionCache.swift */; };
@@ -121,6 +122,7 @@
 		A81ACF052A741DBB0032350C /* HomeProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		A81ACF062A741DBB0032350C /* HomeProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		A82BE71C2A74317700CBD0F9 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		A8481E5D2A83B9DF00735FA0 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		A8555D082A72E5810084BFB1 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A8555D0A2A72E5A30084BFB1 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		A8555D0C2A72EA360084BFB1 /* URLSessionCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionCache.swift; sourceTree = "<group>"; };
@@ -289,6 +291,25 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A8481E5B2A83B9C700735FA0 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				A8555D0F2A72EACE0084BFB1 /* UserDefaultsUnityManager.swift */,
+				A8555D112A72EADB0084BFB1 /* UserDefaultsKeys.swift */,
+				A8555D132A72EAEA0084BFB1 /* UserDefaultsOrganizer.swift */,
+				A8555D152A72EAFA0084BFB1 /* UserDefaultError.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		A8481E5C2A83B9D400735FA0 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				A8481E5D2A83B9DF00735FA0 /* KeyChainManager.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
 		A8555D072A72E5720084BFB1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,10 +328,8 @@
 		A8555D0E2A72EAB50084BFB1 /* CacheManager */ = {
 			isa = PBXGroup;
 			children = (
-				A8555D0F2A72EACE0084BFB1 /* UserDefaultsUnityManager.swift */,
-				A8555D112A72EADB0084BFB1 /* UserDefaultsKeys.swift */,
-				A8555D132A72EAEA0084BFB1 /* UserDefaultsOrganizer.swift */,
-				A8555D152A72EAFA0084BFB1 /* UserDefaultError.swift */,
+				A8481E5C2A83B9D400735FA0 /* KeyChain */,
+				A8481E5B2A83B9C700735FA0 /* UserDefaults */,
 			);
 			path = CacheManager;
 			sourceTree = "<group>";
@@ -900,6 +919,7 @@
 				A8555D1D2A72F7780084BFB1 /* NetworkError.swift in Sources */,
 				A8555D212A7391C40084BFB1 /* EndPoints.swift in Sources */,
 				A89C65842A77A52A00E76C5B /* HomeViewModel.swift in Sources */,
+				A8481E5E2A83B9DF00735FA0 /* KeyChainManager.swift in Sources */,
 				A8555D1F2A7391A60084BFB1 /* HttpMethod.swift in Sources */,
 				A8555D122A72EADB0084BFB1 /* UserDefaultsKeys.swift in Sources */,
 				A8730E292A72CA360071B64B /* AppDelegate.swift in Sources */,
