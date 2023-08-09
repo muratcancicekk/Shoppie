@@ -30,8 +30,12 @@ extension LoginViewModel: LoginViewModelInterface {
             guard let self = self else { return }
             switch response {
             case .success(let success):
-                UserDefaultsOrganizer.token.save(data: success.token)
                 if let token = success.token {
+                    UserDefaultsOrganizer.email.save(data: self.email)
+                    KeychainManager.saveData(success.token ?? "",
+                                             forAccount: self.email,
+                                             service: KeyChainServices.definexCase.rawValue)
+
                     DispatchQueue.main.async {
                         self.view?.openHome()
                         self.view?.activityStop()

@@ -29,7 +29,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func controlRootViewControl() {
         let nav: UINavigationController
-        if UserDefaultsOrganizer.token.read() != nil {
+        let email = UserDefaultsOrganizer.email.read()
+        let token = KeychainManager.getData(forAccount: email ?? "", service: KeyChainServices.definexCase.rawValue)
+        if token != nil {
             let vc = TabbarController()
             nav = UINavigationController(rootViewController: vc ?? UIViewController())
             self.window?.rootViewController = nav
