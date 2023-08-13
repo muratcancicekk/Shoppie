@@ -17,7 +17,7 @@
 - SDWebImage
 - Swiftlint
   
-I provided the desired view using Compasble layout and while doing this, I made my requests sequentially in the background thred in accordance with the section structure with DispatchSemaphore.
+I provided the desired view using Compasble layout and while doing this, I made my requests sequentially in the background thred in accordance with the section structure with DispatchSemaphore. If there is no network connection, I also show the data I keep in the cache
 
 
 ![Ekran Resmi 2023-08-02 23 58 39](https://github.com/muratcancicekk/definex/assets/62101026/6b653d82-6b9f-465c-a154-4d5f8245effe)
