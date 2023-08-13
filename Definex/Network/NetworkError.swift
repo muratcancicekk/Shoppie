@@ -12,4 +12,5 @@ enum NetworkError: Error {
     case requestFailed
     case invalidData
     case tokenError
+    case noInternet
 }
